@@ -1,6 +1,6 @@
 import React from "react";
-import '../../styles/button.css';
-import '../../styles/add-option.css';
+import '../../static/css/button.css';
+import '../../static/css/add-option.css';
 import {addShop} from "../actions/actions";
 import {connect} from "react-redux";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import '../../styles/button.css';
-import '../../styles/option.css';
+import '../../static/css/button.css';
+import '../../static/css/option.css';
 
 
 const LineItem = ({lineItem, deleteLineItem}) => {
