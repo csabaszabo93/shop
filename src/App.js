@@ -13,7 +13,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import axios from 'axios';
 
 class App extends React.Component {
-  state = {
+  /*state = {
     options:
         {lineItems:[
         { id: 1, product: { id: 0, name: 'towel'}, completed: false },
@@ -21,8 +21,8 @@ class App extends React.Component {
       shops:[{ id: 1, name: 'FMCG', },
           {  id: 2, name: 'Travel',},
           {  id: 3, name: 'Food',  }]
-  };
-  handleDeleteOptions = () => {
+  };*/
+  /*handleDeleteOptions = () => {
     this.setState(() => ({ options: { lineItems: []}}));
   };
   handleDeleteOption = (optionToRemove) => {
@@ -38,7 +38,7 @@ class App extends React.Component {
   };
   handleDeleteShops = () => {
       this.setState(() => ({shops:[]}));
-  };
+  };*/
 
 
   handlePick = () => {
@@ -47,7 +47,7 @@ class App extends React.Component {
     const option = this.state.options.lineItems[randomNum].product.name;
     alert(option);
   };
-  handleAddOption = (option) => {
+  /*handleAddOption = (option) => {
     if (!option) {
       return 'Enter valid value to add item';
     }
@@ -76,7 +76,8 @@ class App extends React.Component {
     // this.setState({options:
     //       {lineItems: [...this.state.options.lineItems, newLine]}});
   };
-    handleAddShop = (name, address) => {
+*/
+   /* handleAddShop = (name, address) => {
         if (!name) {
             return 'Enter valid value to add item';
         }
@@ -99,14 +100,14 @@ class App extends React.Component {
         //   options: {lineItems: prevState.options.lineItems.concat(newLine)}}));
         // this.setState({options:
         //       {lineItems: [...this.state.options.lineItems, newLine]}});
-    };
+    };*/
   componentDidMount() {
-      axios.get('http://localhost:8080/shopping-list/all')
+/*      axios.get('http://localhost:8080/shopping-list/all')
           .then(res => {
               this.setState({ options: res.data });
           });
       axios.get('http://localhost:8080/shop/all')
-          .then(res => this.setState({ shops: res.data}));
+          .then(res => this.setState({ shops: res.data}));*/
     // try {
     //   const json = localStorage.getItem('options');
     //   const options = JSON.parse(json);
