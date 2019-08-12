@@ -8,53 +8,47 @@ import './static/css/container.css';
 import './static/css/widget.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import ProductListContainer from "./components/containers/ProductList";
+import QuantityModal from "./components/product-list/QuantityModal";
 
-class App extends React.Component {
-
-  render() {
-    const subtitle = 'Take that home....';
-
-    return (
-        <Router>
-          <div>
-            <Header subtitle={subtitle} />
-            {/*<Route exact path="/" component={Welcome} />*/}
-            <Route exact path="/" render={props => (
-                <React.Fragment>
-                  <div className="container">
-                    <div className="widget">
-                      <Welcome/>
-                    </div>
+let App = () => {
+  return (
+      <Router>
+        <div>
+          <Header subtitle="Take that home..." />
+          <Route exact path="/" render={() => (
+              <React.Fragment>
+                <div className="container">
+                  <div className="widget">
+                    <Welcome/>
                   </div>
-                </React.Fragment>
-            )}/>
-            <Route path="/shops" render={props => (
-                <React.Fragment>
-                    <div className="container">
-                        <div className="widget">
-                            <ShopListContainer/>
-                            <AddShopContainer
-                                handleAddOption={this.handleAddShop}
-                            />
-                        </div>
-                    </div>
-                </React.Fragment>
-            )}/>
-            <Route path="/actual" render={props => (
-                <React.Fragment>
-                  <div className="container">
-                    <div className="widget">
-                      <ProductListContainer/>
-                      <ShoppingListContainer/>
-                    </div>
+                </div>
+              </React.Fragment>
+          )}/>
+          <Route path="/shops" render={() => (
+              <React.Fragment>
+                <div className="container">
+                  <div className="widget">
+                    <ShopListContainer/>
+                    <AddShopContainer/>
                   </div>
-                </React.Fragment>
-            )} />
-          </div>
-        </Router>
-    );
-  }
-}
+                </div>
+              </React.Fragment>
+          )}/>
+          <Route path="/actual" render={() => (
+              <React.Fragment>
+                <div className="container">
+                  <div className="widget">
+                    <QuantityModal/>
+                    <ProductListContainer/>
+                    <ShoppingListContainer/>
+                  </div>
+                </div>
+              </React.Fragment>
+          )} />
+        </div>
+      </Router>
+  )
+};
 
 
 export default App;

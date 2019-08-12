@@ -1,12 +1,15 @@
 import React from "react";
-import '../../static/css/button.css';
-import '../../static/css/option.css';
+import '../../static/css/App.css';
 
 
-const Product = ({product}) => {
+const Product = ({product, toggleQuantityModalVisibility}) => {
   return (
-      <div className="option">
-        <p className="option__text">{product.name}</p>
+      <div className="product-tile" onClick={event => {
+        event.preventDefault();
+        toggleQuantityModalVisibility();
+      }}>
+        <img src={product.pictureUrl} alt=""/>
+        <p>{product.name}</p>
       </div>
   );
 };
