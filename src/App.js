@@ -1,12 +1,12 @@
 import React from 'react';
 // import './App.css';
 import AddOption from './components/actual/AddOption';
-import AddShop from './components/shops/AddShop';
+import AddShopContainer from './components/containers/AddShopContainer';
 import Header from './components/Header';
 //import ShoppingList from './components/actual/ShoppingList';
 import Welcome from './components/welcome/Welcome';
-import Shops from './components/shops/Shops';
 import ShoppingListContainer from './components/containers/ShoppingList'
+import ShopListContainer from './components/containers/ShopList'
 import './styles/container.css';
 import './styles/widget.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
@@ -151,12 +151,8 @@ class App extends React.Component {
                 <React.Fragment>
                     <div className="container">
                         <div className="widget">
-                            <Shops
-                                shops={this.state.shops}
-                                handleDeleteOptions={this.handleDeleteShops}
-                                handleDeleteOption={this.handleDeleteShop}
-                            />
-                            <AddShop
+                            <ShopListContainer/>
+                            <AddShopContainer
                                 handleAddOption={this.handleAddShop}
                             />
                         </div>

@@ -3,7 +3,7 @@ import React from "react";
 import '../../styles/widget.css';
 
 
-const Shops = (props) => {
+const ShopList = ({shops, deleteShop, clearList}) => {
     return (
         <div>
             <div className="widget-header">
@@ -11,19 +11,17 @@ const Shops = (props) => {
                 <button
                     className="button button--link"
                     style={{color: '#F2F0CC'}}
-                    onClick={props.handleDeleteOptions}
+                    onClick={() => clearList()}
                 >Remove All
                 </button>
             </div>
-            {props.shops.length === 0 && <p className="widget__message">Please add some shop to get started!</p>}
+            {shops.length === 0 && <p className="widget__message">Please add some shop to get started!</p>}
             {
-                props.shops.map((shop, index) => (
+                shops.map((shop, index) => (
                     <Shop
-                        key={shop.name}
-                        optionText={shop.name}
-                        optionObject={shop}
-                        count={index+1}
-                        handleDeleteOption={props.handleDeleteOption}
+                        key={index}
+                        shop={shop}
+                        deleteShop={deleteShop}
                     />
                 ))
             }
@@ -31,4 +29,4 @@ const Shops = (props) => {
     );
 };
 
-export default Shops;
+export default ShopList;

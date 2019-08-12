@@ -3,14 +3,14 @@ import '../../styles/button.css';
 import '../../styles/option.css';
 
 
-const Shop = (props) => {
+const Shop = ({shop, deleteShop}) => {
     return (
         <div className="option">
-            <p className="option__text">{props.count}. {props.optionText}</p>
+            <p className="option__text">{shop.name}</p>
             <button
                 className="button button--link"
                 onClick={(e) => {
-                    props.handleDeleteOption(props.optionObject);
+                    deleteShop(shop.id);
                 }}
             >
                 remove
