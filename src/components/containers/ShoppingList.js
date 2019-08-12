@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ShoppingList from '../actual/ShoppingList'
+import ShoppingList from '../shopping-list/ShoppingList'
 import {clearShoppingList, deleteShoppingListItem} from '../actions/actions'
 
 const mapStateToProps = state => {

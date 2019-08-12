@@ -5,8 +5,7 @@ import '../../styles/widget.css';
 
 const ShoppingList = ({lineItems, deleteLineItem, clearList}) => {
     return (
-        <div>
-          {console.log(lineItems)}
+        <div id="shopping-list">
           <div className="widget-header">
                 <h3 className="widget-header__title">Your shop items:</h3>
                 <button

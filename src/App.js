@@ -1,5 +1,4 @@
 import React from 'react';
-import AddOption from './components/actual/AddOption';
 import AddShopContainer from './components/containers/AddShopContainer';
 import Header from './components/Header';
 import Welcome from './components/welcome/Welcome';
@@ -8,6 +7,7 @@ import ShopListContainer from './components/containers/ShopList'
 import './styles/container.css';
 import './styles/widget.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
+import ProductListContainer from "./components/containers/ProductList";
 
 class App extends React.Component {
 
@@ -44,10 +44,8 @@ class App extends React.Component {
                 <React.Fragment>
                   <div className="container">
                     <div className="widget">
+                      <ProductListContainer/>
                       <ShoppingListContainer/>
-                      <AddOption
-                          handleAddOption={this.handleAddOption}
-                      />
                     </div>
                   </div>
                 </React.Fragment>
