@@ -3,8 +3,8 @@ import shoppingListReducer from '../reducers/ShoppingList'
 import shopListReducer from '../reducers/ShopList'
 
 const rootReducer = combineReducers({
-  shoppingListReducer,
-  shopListReducer
+  shoppingList: shoppingListReducer,
+  shops: shopListReducer
 });
 
 export default rootReducer

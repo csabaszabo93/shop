@@ -1,8 +1,4 @@
-import {
-  CLEAR_SHOPPING_LIST,
-  ADD_SHOPPING_LIST_ITEM,
-  DELETE_SHOPPING_LIST_ITEM
-} from "../actions/actions";
+import {ADD_SHOP, CLEAR_SHOP_LIST, DELETE_SHOP_LIST_ITEM} from "../actions/actions";
 
 const defaultShopList = [
   { id: 1, name: 'FMCG', },
@@ -12,15 +8,15 @@ const defaultShopList = [
 
 function shopListReducer(state = defaultShopList, action) {
   switch(action.type) {
-    case CLEAR_SHOPPING_LIST:
+    case CLEAR_SHOP_LIST:
       return [];
-    case ADD_SHOPPING_LIST_ITEM:
+    case ADD_SHOP:
       return [
           ...state,
           action.lineItem
       ];
-    case DELETE_SHOPPING_LIST_ITEM:
-      return state.filter(lineItem => lineItem.id !== action.lineItemId);
+    case DELETE_SHOP_LIST_ITEM:
+      return state.filter(shop => shop.id !== action.shopId);
     default:
       return state;
   }

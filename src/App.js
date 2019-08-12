@@ -3,14 +3,15 @@ import React from 'react';
 import AddOption from './components/actual/AddOption';
 import AddShop from './components/shops/AddShop';
 import Header from './components/Header';
-import Action from './components/actual/Action';
-import Options from './components/actual/Options';
+//import ShoppingList from './components/actual/ShoppingList';
 import Welcome from './components/welcome/Welcome';
 import Shops from './components/shops/Shops';
+import ShoppingListContainer from './components/containers/ShoppingList'
 import './styles/container.css';
 import './styles/widget.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import axios from 'axios';
+
+// import axios from 'axios';
 
 class App extends React.Component {
   /*state = {
@@ -166,19 +167,11 @@ class App extends React.Component {
                 <React.Fragment>
                   <div className="container">
                     <div className="widget">
-                      <Options
-                          options={this.state.options.lineItems}
-                          handleDeleteOptions={this.handleDeleteOptions}
-                          handleDeleteOption={this.handleDeleteOption}
-                      />
+                      <ShoppingListContainer/>
                       <AddOption
                           handleAddOption={this.handleAddOption}
                       />
                     </div>
-                    <Action
-                        hasOptions={this.state.options.lineItems.length > 0}
-                        handlePick={this.handlePick}
-                    />
                   </div>
                 </React.Fragment>
             )} />

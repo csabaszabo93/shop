@@ -3,14 +3,14 @@ import '../../styles/button.css';
 import '../../styles/option.css';
 
 
-const Option = (props) => {
+const LineItem = ({lineItem, deleteLineItem}) => {
     return (
         <div className="option">
-            <p className="option__text">{props.count}. {props.optionText}</p>
+            <p className="option__text">{lineItem.id}</p>
             <button
                 className="button button--link"
                 onClick={(e) => {
-                    props.handleDeleteOption(props.optionObject);
+                    deleteLineItem(lineItem.id);
                 }}
             >
                 remove
@@ -18,4 +18,4 @@ const Option = (props) => {
         </div>
     );
 };
-export default Option;
+export default LineItem;
