@@ -6,7 +6,7 @@ import '../../static/css/option.css';
 const LineItem = ({lineItem, deleteLineItem}) => {
     return (
         <div className="option">
-            <p className="option__text">{lineItem.id}</p>
+            <p className="option__text">{lineItem.product}</p>
             <button
                 className="button button--link"
                 onClick={(e) => {

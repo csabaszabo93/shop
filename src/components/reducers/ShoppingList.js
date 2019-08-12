@@ -20,7 +20,10 @@ function shoppingListReducer(state = defaultShoppingList, action) {
     case ADD_SHOPPING_LIST_ITEM:
       return [
           ...state,
-          action.shoppingList
+        {
+          quantity: action.quantity,
+          product: action.product
+        }
       ];
     case DELETE_SHOPPING_LIST_ITEM:
       return state.filter(lineItem => lineItem.id !== action.lineItemId);

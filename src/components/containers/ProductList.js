@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import ProductList from '../product-list/ProductList'
-import {toggleQuantityModalVisibility} from "../actions/actions";
+import {convertToLineItem, toggleQuantityModalVisibility} from "../actions/actions";
 
 const mapStateToProps = state => {
   return {
@@ -12,6 +12,9 @@ const mapDispatchToProps = dispatch => {
   return{
     toggleQuantityModalVisibility: () => {
       dispatch(toggleQuantityModalVisibility())
+    },
+    convertToLineItem: (productId) => {
+      dispatch(convertToLineItem(productId))
     }
   }
 };

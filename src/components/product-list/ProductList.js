@@ -4,7 +4,7 @@ import '../../static/css/widget.css';
 import '../../static/css/App.css';
 
 
-const ProductList = ({products, toggleQuantityModalVisibility}) => {
+const ProductList = ({products, toggleQuantityModalVisibility, convertToLineItem}) => {
   return (
       <div id="product-list">
         <div className="widget-header">
@@ -19,7 +19,7 @@ const ProductList = ({products, toggleQuantityModalVisibility}) => {
           {products.length === 0 && <p className="widget__message">Please add some shoppin' to get started!</p>}
           {
             products.map((product, index) => (
-                <Product key={index} product={product} toggleQuantityModalVisibility={toggleQuantityModalVisibility}/>
+                <Product key={index} product={product} toggleQuantityModalVisibility={toggleQuantityModalVisibility} convertToLineItem={convertToLineItem}/>
             ))
           }
         </product-pool>
