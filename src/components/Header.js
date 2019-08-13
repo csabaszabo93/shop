@@ -1,29 +1,21 @@
 import React from "react";
 import '../static/css/App.css';
-import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBars, faUser} from "@fortawesome/free-solid-svg-icons";
 
-const Header = (props) => {
+const Header = ({title, username, openMenu, loadUser}) => {
     return (
-        <div  className="header" >
-                <div className="header_container">
-                    <div>
-                        <h1 className="header__title">{props.title}</h1>
-                        {props.subtitle && <h2 className="header__subtitle">{props.subtitle}</h2>}
-                    </div>
-                </div>
+        <div className="header" >
+            <FontAwesomeIcon icon={faBars}/>
             <div>
-                <Link to="/shops">  Shops  </Link>
-                <div>|</div>
-                <Link to="/actual">  Actual  </Link>
-                <div>|</div>
-                <Link to="/" >Welcome  </Link>
+              {title}
+            </div>
+            <div id="user-panel">
+              <FontAwesomeIcon icon={faUser}/>
+              {username}
             </div>
         </div>
     );
-};
-
-Header.defaultProps = {
-    title: 'Darling'
 };
 
 export default Header;
