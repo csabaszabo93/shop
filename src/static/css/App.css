@@ -6,6 +6,33 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+@media screen and (min-width: 1025px) {
+  body{
+    font-size: 18px;
+  }
+  #menu {
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body{
+    font-size: 21px;
+  }
+  #menu {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body{
+    font-size: 20px;
+  }
+  #menu {
+    width: 60vw;
+  }
+}
+
 #navigator a{
   color: white;
   text-decoration: none;
@@ -62,7 +89,7 @@ product-pool{
 }
 
 #modal{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -180,4 +207,28 @@ product-pool{
 
 #user-panel:hover{
   cursor: pointer;
+}
+
+#menu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #683D43;
+  color: white;
+  padding-top: 1.6rem;
+}
+
+.menu-tile{
+  padding: 0.2rem;
+  border-bottom: 0.1rem #eceff1 solid;
+}
+
+.menu-tile:hover{
+  background-color: rgba(236,239,261,0.3);
+  cursor: pointer;
+}
+
+.menu-tile:nth-of-type(1){
+  border-top: 0.1rem #eceff1 solid;
 }
