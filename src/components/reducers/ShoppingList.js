@@ -3,12 +3,14 @@ import {ADD_SHOPPING_LIST_ITEM, CLEAR_SHOPPING_LIST, DELETE_SHOPPING_LIST_ITEM} 
 const defaultShoppingList = [
   {
     id: 1,
-    product: 0,
+    quantity: 3,
+    product: 4,
     completed: false
   },
   {
     id: 2,
-    product: 1,
+    quantity: 1,
+    product: 7,
     completed: false
   }
 ];

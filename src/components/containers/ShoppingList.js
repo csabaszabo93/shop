@@ -4,7 +4,8 @@ import {clearShoppingList, deleteShoppingListItem} from '../actions/actions'
 
 const mapStateToProps = state => {
   return {
-    lineItems: state.shoppingList
+    lineItems: state.shoppingList,
+    products: state.products
   }
 };
 

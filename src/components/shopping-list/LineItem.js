@@ -3,10 +3,10 @@ import '../../static/css/button.css';
 import '../../static/css/option.css';
 
 
-const LineItem = ({lineItem, deleteLineItem}) => {
+const LineItem = ({lineItem, product, deleteLineItem}) => {
     return (
         <div className="option">
-            <p className="option__text">{lineItem.product}</p>
+            <p className="option__text">{lineItem.quantity} {product.packaging} {product.name}</p>
             <button
                 className="button button--link"
                 onClick={(e) => {

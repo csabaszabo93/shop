@@ -3,7 +3,7 @@ import React from "react";
 import '../../static/css/widget.css';
 
 
-const ShoppingList = ({lineItems, deleteLineItem, clearList}) => {
+const ShoppingList = ({lineItems, products, deleteLineItem, clearList}) => {
     return (
         <div id="shopping-list">
           <div className="widget-header">
@@ -20,7 +20,7 @@ const ShoppingList = ({lineItems, deleteLineItem, clearList}) => {
             {lineItems.length === 0 && <p className="widget__message">Please add some shoppin' to get started!</p>}
             {
                 lineItems.map((lineItem, index) => (
-                    <LineItem key={index} lineItem={lineItem} deleteLineItem={deleteLineItem}/>
+                    <LineItem key={index} lineItem={lineItem} deleteLineItem={deleteLineItem} product={products.filter(product => product.id === lineItem.product)[0]}/>
                 ))
             }
         </div>
