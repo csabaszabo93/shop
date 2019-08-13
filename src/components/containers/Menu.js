@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => {
     selectionHandler: title => {
       dispatch(selectMenuItem(title));
       dispatch(toggleMenuVisibility())
+    },
+    closeMenu: () => {
+      dispatch(toggleMenuVisibility());
     }
   }
 };
