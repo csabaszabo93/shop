@@ -4,8 +4,7 @@ import Header from './components/Header';
 import Welcome from './components/welcome/Welcome';
 import ShoppingListContainer from './components/containers/ShoppingList'
 import ShopListContainer from './components/containers/ShopList'
-import './static/css/container.css';
-import './static/css/widget.css';
+import './static/css/App.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import ProductListContainer from "./components/containers/ProductList";
 import QuantityModal from "./components/product-list/QuantityModal";

@@ -1,6 +1,6 @@
 import LineItem from "./LineItem";
 import React from "react";
-import '../../static/css/widget.css';
+import '../../static/css/App.css';
 
 
 const ShoppingList = ({lineItems, products, deleteLineItem, clearList}) => {

@@ -1,6 +1,6 @@
 import Shop from "./Shop";
 import React from "react";
-import '../../static/css/widget.css';
+import '../../static/css/App.css';
 
 
 const ShopList = ({shops, deleteShop, clearList}) => {

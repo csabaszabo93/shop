@@ -1,6 +1,5 @@
 import React from "react";
-import '../../static/css/button.css';
-import '../../static/css/option.css';
+import '../../static/css/App.css';
 
 
 const LineItem = ({lineItem, product, deleteLineItem}) => {

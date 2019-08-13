@@ -1,6 +1,5 @@
 import Product from "./Product";
 import React from "react";
-import '../../static/css/widget.css';
 import '../../static/css/App.css';
 
 
