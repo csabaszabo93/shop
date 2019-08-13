@@ -20,13 +20,21 @@ function shoppingListReducer(state = defaultShoppingList, action) {
     case CLEAR_SHOPPING_LIST:
       return [];
     case ADD_SHOPPING_LIST_ITEM:
-      return [
+      const filteredLineItems = state.filter(lineItem => lineItem.product === action.product);
+      if(filteredLineItems.length === 0) {
+        return [
           ...state,
-        {
-          quantity: action.quantity,
-          product: action.product
-        }
-      ];
+          {
+            quantity: action.quantity,
+            product: action.product
+          }
+        ];
+      } else {
+        const lineItem = filteredLineItems[0];
+        const newState = Object.assign([], state);
+        newState.filter(item => item.product === lineItem.product)[0].quantity += action.quantity;
+        return newState;
+      }
     case DELETE_SHOPPING_LIST_ITEM:
       return state.filter(lineItem => lineItem.id !== action.lineItemId);
     default:

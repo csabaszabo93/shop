@@ -32,7 +32,7 @@ let QuantityModal = ({visible, productToLineItem, toggleVisibility, saveNewLineI
               <input ref={node => quantity = node} type="number"/>
               <button type="button" onClick={event => {
                 event.preventDefault();
-                saveNewLineItem(quantity.value, productToLineItem);
+                saveNewLineItem(parseInt(quantity.value), productToLineItem);
                 toggleVisibility();
               }}>Confirm</button>
             </form>
