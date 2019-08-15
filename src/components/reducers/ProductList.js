@@ -1,4 +1,4 @@
-// import {ADD_SHOPPING_LIST_ITEM, CLEAR_SHOPPING_LIST, DELETE_SHOPPING_LIST_ITEM} from "../actions/actions";
+// import {ADD_LINE_ITEM, CLEAR_SHOPPING_LIST, DELETE_LINE_ITEM} from "../actions/actions";
 
 const defaultProductList = [
   {

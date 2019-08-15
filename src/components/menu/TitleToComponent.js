@@ -10,5 +10,5 @@ export const menuTitleToComponent = {
   "welcome": <Welcome/>,
   "shops": [<ShopListContainer/>, <AddShopContainer/>],
   "add product to list": [<QuantityModal/>, <ProductListContainer/>],
-  "latest shopping list": <ShoppingListContainer/>
+  "my shopping lists": <ShoppingListContainer/>
 };

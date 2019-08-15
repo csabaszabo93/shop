@@ -1,7 +1,7 @@
 import React from "react";
 import '../../static/css/App.css';
 import {connect} from "react-redux";
-import {addShoppingListItem, toggleQuantityModalVisibility} from "../actions/actions";
+import {addLineItem, toggleQuantityModalVisibility} from "../actions/actions";
 
 const mapStateToProps = state => {
   return {
@@ -15,8 +15,9 @@ const mapDispatchToProps = dispatch => {
     toggleVisibility: () => {
       dispatch(toggleQuantityModalVisibility())
     },
-    saveNewLineItem: (quantity, productId) => {
-      dispatch(addShoppingListItem(quantity, productId))
+    saveNewLineItem: (shoppingListId, quantity, productId) => {
+      /*dispatch(saveLineItem(quantity, productId));
+      dispatch(addLineItem(shoppingListId, lineItemId))*/
     }
   }
 };

@@ -1,28 +1,14 @@
 import {connect} from 'react-redux';
-import ShoppingList from '../shopping-list/ShoppingList'
-import {clearShoppingList, deleteShoppingListItem} from '../actions/actions'
+import ShoppingLists from '../shopping-list/ShoppingLists'
 
 const mapStateToProps = state => {
   return {
-    lineItems: state.shoppingList,
-    products: state.products
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteLineItem: id => {
-      dispatch(deleteShoppingListItem(id))
-    },
-    clearList: () => {
-      dispatch(clearShoppingList())
-    }
+    shoppingLists: state.shoppingLists,
   }
 };
 
 const ShoppingListContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShoppingList);
+  mapStateToProps
+)(ShoppingLists);
 
 export default ShoppingListContainer;

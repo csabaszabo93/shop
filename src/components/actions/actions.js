@@ -1,6 +1,6 @@
 export const CLEAR_SHOPPING_LIST = "CLEAR_SHOPPING_LIST";
-export const DELETE_SHOPPING_LIST_ITEM = "DELETE_SHOPPING_LIST_ITEM";
-export const ADD_SHOPPING_LIST_ITEM = "ADD_SHOPPING_LIST_ITEM";
+export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";
+export const ADD_LINE_ITEM = "ADD_LINE_ITEM";
 export const CLEAR_SHOP_LIST = "CLEAR_SHOP_LIST";
 export const DELETE_SHOP_LIST_ITEM = "DELETE_SHOP_LIST_ITEM";
 export const ADD_SHOP = "ADD_SHOP";
@@ -14,11 +14,11 @@ export function clearShoppingList() {
 }
 
 export function deleteShoppingListItem(lineItemId) {
-  return {type: DELETE_SHOPPING_LIST_ITEM, lineItemId: lineItemId}
+  return {type: DELETE_LINE_ITEM, lineItemId: lineItemId}
 }
 
-export function addShoppingListItem(quantity, productId) {
-  return {type: ADD_SHOPPING_LIST_ITEM, quantity: quantity, product: productId}
+export function addLineItem(shoppingListId, lineItemId) {
+  return {type: ADD_LINE_ITEM, shoppingListId: shoppingListId, lineItemId: lineItemId}
 }
 
 export function clearShopList() {
