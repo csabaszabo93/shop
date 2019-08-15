@@ -3,7 +3,7 @@ import React from 'react';
 const MenuTile = ({title, selectionHandler, highlight}) => {
   return(
       <div className="menu-tile" onClick={(e) => {
-        e.preventDefault();
+        e.stopPropagation();
         selectionHandler(title)
       }}>
         {title}
