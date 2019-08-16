@@ -1,14 +1,23 @@
 import {connect} from 'react-redux';
 import ShoppingLists from '../shopping-list/ShoppingLists'
+import ShoppingList from "../shopping-list/ShoppingList";
 
-const mapStateToProps = state => {
+let mapStateToProps = state => {
   return {
     shoppingLists: state.shoppingLists,
   }
 };
 
-const ShoppingListContainer = connect(
+const ShoppingListsContainer = connect(
   mapStateToProps
 )(ShoppingLists);
 
-export default ShoppingListContainer;
+export default ShoppingListsContainer;
+
+mapStateToProps = state => {
+  return {
+    shoppingList: state.shoppingLists[0]
+  }
+};
+
+export const ShoppingListContainer = connect(mapStateToProps)(ShoppingList);

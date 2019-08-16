@@ -2,7 +2,7 @@ import {ADD_LINE_ITEM, CLEAR_SHOPPING_LIST, DELETE_LINE_ITEM} from "../actions/a
 
 const defaultShoppingLists = [
   {
-    id: 1,
+    id: 0,
     associatedShopId: -1,
     groupId: 20,
     ownerId: 1,
