@@ -13,9 +13,7 @@ function shopListReducer(state = defaultShopList, action) {
     case ADD_SHOP:
       return [
           ...state,
-          {
-            name: action.shop
-          }
+          action.shop
       ];
     case DELETE_SHOP_LIST_ITEM:
       return state.filter(shop => shop.id !== action.shopId);

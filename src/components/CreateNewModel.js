@@ -11,7 +11,7 @@ let CreateNewModel = ({createModel}) => {
           if(!input.value.trim()){
             return true;
           }
-          createModel(input.value);
+          createModel({name: input.value});
           input.value = '';
         }}>
           <input

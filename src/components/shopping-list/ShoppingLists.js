@@ -1,6 +1,7 @@
 import ShoppingList from "../shopping-list/ShoppingList"
 import React from "react";
 import '../../static/css/App.css';
+import AddShoppingList from "../../containers/AddShoppingList";
 
 
 const ShoppingLists = ({shoppingLists, loadLineItems}) => {
@@ -20,6 +21,7 @@ const ShoppingLists = ({shoppingLists, loadLineItems}) => {
               <ShoppingList key={index} shoppingList={shoppingList} loadLineItems={loadLineItems}/>
           ))
         }
+        <AddShoppingList/>
       </div>
   );
 };

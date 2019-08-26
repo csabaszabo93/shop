@@ -11,6 +11,7 @@ export const CONVERT_TO_LINE_ITEM = "CONVERT_TO_LINE_ITEM";
 export const CHANGE_RENDERED_COMPONENT = "CHANGE_RENDERED_COMPONENT";
 export const TOGGLE_MENU_VISIBILITY = "TOGGLE_MENU_VISIBILITY";
 export const SAVE_LIST_TO_RENDER = "SAVE_LIST_TO_RENDER";
+export const ADD_SHOPPING_LIST = "ADD_SHOPPING_LIST";
 
 export function clearShoppingList() {
   return {type: CLEAR_SHOPPING_LIST}
@@ -54,4 +55,8 @@ export function toggleMenuVisibility() {
 
 export function saveListToRender(list) {
   return {type: SAVE_LIST_TO_RENDER, list: list}
+}
+
+export function addShoppingList(shoppingList) {
+  return {type: ADD_SHOPPING_LIST, shoppingList: shoppingList}
 }
