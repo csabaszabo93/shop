@@ -1,6 +1,7 @@
 import Shop from "./Shop";
 import React from "react";
 import '../../static/css/App.css';
+import AddShop from "../../containers/AddShop";
 
 
 const ShopList = ({shops, deleteShop, clearList}) => {
@@ -25,6 +26,7 @@ const ShopList = ({shops, deleteShop, clearList}) => {
                     />
                 ))
             }
+            <AddShop/>
         </div>
     );
 };
