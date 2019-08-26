@@ -1,12 +1,12 @@
 import React from 'react';
 
-const MenuTile = ({title, selectionHandler, highlight}) => {
+const MenuTile = ({option, selectionHandler}) => {
   return(
       <div className="menu-tile" onClick={(e) => {
         e.stopPropagation();
-        selectionHandler(title)
+        selectionHandler(option.key)
       }}>
-        {title}
+        {option.title}
       </div>
   )
 };

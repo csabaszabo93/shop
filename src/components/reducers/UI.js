@@ -1,15 +1,17 @@
 import {
   TOGGLE_QUANTITY_MODAL_VISIBILITY,
   CONVERT_TO_LINE_ITEM,
-  SELECT_MENU_ITEM,
-  TOGGLE_MENU_VISIBILITY
+  CHANGE_RENDERED_COMPONENT,
+  TOGGLE_MENU_VISIBILITY, SAVE_LIST_TO_RENDER
 } from "../actions/actions";
+import {getComponent, WELCOME} from "../ComponentRegister";
 
 const defaultUIState = {
   quantityModalVisibility: false,
   productToLineItem: null,
-  selectedMenuItem: "welcome",
+  componentToRender: getComponent(WELCOME),
   menuVisibility: false,
+  listToRender: [],
 };
 
 function UIReducer(state = defaultUIState, action){
@@ -20,8 +22,10 @@ function UIReducer(state = defaultUIState, action){
       return Object.assign({}, state, {menuVisibility: !state.menuVisibility});
     case CONVERT_TO_LINE_ITEM:
       return Object.assign({}, state, {productToLineItem: action.productId});
-    case SELECT_MENU_ITEM:
-      return Object.assign({}, state, {selectedMenuItem: action.title});
+    case CHANGE_RENDERED_COMPONENT:
+      return Object.assign({}, state, {componentToRender: action.component});
+    case SAVE_LIST_TO_RENDER:
+      return Object.assign({}, state, {listToRender: action.list});
     default:
       return state
   }

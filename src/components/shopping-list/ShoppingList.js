@@ -2,10 +2,10 @@ import React from "react";
 import '../../static/css/App.css';
 
 
-const ShoppingList = ({shoppingList}) => {
+const ShoppingList = ({shoppingList, loadLineItems}) => {
   return (
       <div className="option">
-        <p className="option__text">{shoppingList.id}</p>
+        <p onClick={() => loadLineItems(shoppingList.lineItems)} className="option__text">{shoppingList.id}</p>
         <button
             className="button button--link"
         >

@@ -1,25 +1,24 @@
 import React from 'react';
 import Header from './components/Header';
 import './static/css/App.css';
-import {menuTitleToComponent} from "./components/menu/TitleToComponent";
 import MenuContainer from "./components/containers/Menu";
 import {connect} from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    selectedMenuItem: state.UIState.selectedMenuItem
+    componentToRender: state.UIState.componentToRender
   }
 };
 
 
-let App = ({selectedMenuItem}) => {
+let App = ({componentToRender}) => {
   return (
     <div id="App">
       <Header/>
       <MenuContainer/>
       <div className="container">
         <div className="widget">
-          {menuTitleToComponent[selectedMenuItem]}
+          {componentToRender}
         </div>
       </div>
     </div>

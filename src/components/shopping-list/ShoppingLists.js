@@ -3,7 +3,7 @@ import React from "react";
 import '../../static/css/App.css';
 
 
-const ShoppingLists = ({shoppingLists}) => {
+const ShoppingLists = ({shoppingLists, loadLineItems}) => {
   return (
       <div id="shopping-list">
         <div className="widget-header">
@@ -17,7 +17,7 @@ const ShoppingLists = ({shoppingLists}) => {
         {shoppingLists.length === 0 && <p className="widget__message">Please add some shoppin' to get started!</p>}
         {
           shoppingLists.map((shoppingList, index) => (
-              <ShoppingList key={index} shoppingList={shoppingList}/>
+              <ShoppingList key={index} shoppingList={shoppingList} loadLineItems={loadLineItems}/>
           ))
         }
       </div>

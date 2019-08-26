@@ -1,3 +1,5 @@
+import {getComponent} from "../ComponentRegister";
+
 export const CLEAR_SHOPPING_LIST = "CLEAR_SHOPPING_LIST";
 export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";
 export const ADD_LINE_ITEM = "ADD_LINE_ITEM";
@@ -6,8 +8,9 @@ export const DELETE_SHOP_LIST_ITEM = "DELETE_SHOP_LIST_ITEM";
 export const ADD_SHOP = "ADD_SHOP";
 export const TOGGLE_QUANTITY_MODAL_VISIBILITY = "TOGGLE_QUANTITY_MODAL_VISIBILITY";
 export const CONVERT_TO_LINE_ITEM = "CONVERT_TO_LINE_ITEM";
-export const SELECT_MENU_ITEM = "SELECT_MENU_ITEM";
+export const CHANGE_RENDERED_COMPONENT = "CHANGE_RENDERED_COMPONENT";
 export const TOGGLE_MENU_VISIBILITY = "TOGGLE_MENU_VISIBILITY";
+export const SAVE_LIST_TO_RENDER = "SAVE_LIST_TO_RENDER";
 
 export function clearShoppingList() {
   return {type: CLEAR_SHOPPING_LIST}
@@ -41,10 +44,14 @@ export function convertToLineItem(productId) {
   return {type: CONVERT_TO_LINE_ITEM, productId: productId}
 }
 
-export function selectMenuItem(title) {
-  return {type: SELECT_MENU_ITEM, title: title}
+export function renderComponent(component) {
+  return {type: CHANGE_RENDERED_COMPONENT, component: getComponent(component)}
 }
 
 export function toggleMenuVisibility() {
   return {type: TOGGLE_MENU_VISIBILITY}
+}
+
+export function saveListToRender(list) {
+  return {type: SAVE_LIST_TO_RENDER, list: list}
 }
