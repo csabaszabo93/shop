@@ -1,4 +1,4 @@
-import {getComponent} from "../ComponentRegister";
+import {getComponent} from "../components/ComponentRegister";
 
 export const CLEAR_SHOPPING_LIST = "CLEAR_SHOPPING_LIST";
 export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";

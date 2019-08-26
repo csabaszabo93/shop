@@ -1,9 +1,9 @@
-import {combineReducers} from "redux";
 import shoppingListReducer from './ShoppingLists'
-import shopListReducer from '../reducers/ShopList'
+import shopListReducer from './ShopList'
 import productListReducer from "./ProductList";
 import UIReducer from "./UI";
 import lineItemsReducer from "./LineItems";
+import {combineReducers} from "redux";
 
 const rootReducer = combineReducers({
   shoppingLists: shoppingListReducer,

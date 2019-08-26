@@ -4,7 +4,7 @@ import {
   CHANGE_RENDERED_COMPONENT,
   TOGGLE_MENU_VISIBILITY, SAVE_LIST_TO_RENDER
 } from "../actions/actions";
-import {getComponent, WELCOME} from "../ComponentRegister";
+import {getComponent, WELCOME} from "../components/ComponentRegister";
 
 const defaultUIState = {
   quantityModalVisibility: false,

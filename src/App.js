@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import './static/css/App.css';
-import MenuContainer from "./components/containers/Menu";
+import MenuContainer from "./containers/Menu";
 import {connect} from "react-redux";
 
 const mapStateToProps = state => {

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ProductList from '../product-list/ProductList'
+import ProductList from '../components/product-list/ProductList'
 import {convertToLineItem, toggleQuantityModalVisibility} from "../actions/actions";
 
 const mapStateToProps = state => {

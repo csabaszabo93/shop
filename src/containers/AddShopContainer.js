@@ -1,5 +1,5 @@
 import React from "react";
-import '../../static/css/App.css';
+import '../static/css/App.css';
 import {addShop} from "../actions/actions";
 import {connect} from "react-redux";
 

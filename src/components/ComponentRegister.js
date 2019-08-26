@@ -1,11 +1,11 @@
 import Welcome from "./welcome/Welcome";
 import React from "react";
-import ShopListContainer from "./containers/ShopList";
-import AddShopContainer from "./containers/AddShopContainer";
+import ShopListContainer from "../containers/ShopList";
+import AddShopContainer from "../containers/AddShopContainer";
 import QuantityModal from "./product-list/QuantityModal";
-import ProductListContainer from "./containers/ProductList";
-import ShoppingListsContainer, {ShoppingListContainer} from "./containers/ShoppingList";
-import LineItemsContainer from "./containers/LineItemList";
+import ProductListContainer from "../containers/ProductList";
+import ShoppingListsContainer, {ShoppingListContainer} from "../containers/ShoppingList";
+import LineItemsContainer from "../containers/LineItemList";
 
 export const WELCOME = "WELCOME";
 export const SHOPS = "SHOPS";

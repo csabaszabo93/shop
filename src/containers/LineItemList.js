@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import LineItems from "../shopping-list/LineItems";
+import LineItems from "../components/shopping-list/LineItems";
 
 let mapStateToProps = state => {
   return {

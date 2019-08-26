@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
-import ShoppingLists from '../shopping-list/ShoppingLists'
-import ShoppingList from "../shopping-list/ShoppingList";
+import ShoppingLists from '../components/shopping-list/ShoppingLists'
+import ShoppingList from "../components/shopping-list/ShoppingList";
 import {renderComponent, saveListToRender} from "../actions/actions";
-import {LINE_ITEMS} from "../ComponentRegister";
+import {LINE_ITEMS} from "../components/ComponentRegister";
 
 let mapStateToProps = state => {
   return {

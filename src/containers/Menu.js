@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {renderComponent, toggleMenuVisibility} from '../actions/actions'
-import Menu from "../menu/Menu";
-import {getComponentKeys} from "../ComponentRegister";
+import Menu from "../components/menu/Menu";
+import {getComponentKeys} from "../components/ComponentRegister";
 
 const mapStateToProps = state => {
   return {

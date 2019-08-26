@@ -2,7 +2,7 @@ import React from "react";
 import '../static/css/App.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faUser} from "@fortawesome/free-solid-svg-icons";
-import {toggleMenuVisibility} from "./actions/actions";
+import {toggleMenuVisibility} from "../actions/actions";
 import {connect} from "react-redux";
 
 const mapStateToProps = state => {

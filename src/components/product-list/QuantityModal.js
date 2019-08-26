@@ -1,7 +1,7 @@
 import React from "react";
 import '../../static/css/App.css';
 import {connect} from "react-redux";
-import {addLineItem, toggleQuantityModalVisibility} from "../actions/actions";
+import {addLineItem, toggleQuantityModalVisibility} from "../../actions/actions";
 
 const mapStateToProps = state => {
   return {
