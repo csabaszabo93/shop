@@ -1,15 +1,21 @@
 import React from "react";
 import '../../static/css/App.css';
 import {connect} from "react-redux";
-import {addLineItem, toggleQuantityFormVisibility} from "../../actions/actions";
+import {addLineItem, toggleQuantityFormVisibility, updateLineItem} from "../../actions/actions";
 import {LineItemModel} from "../../models/models";
 
 const mapStateToProps = state => {
+  const selectedShoppingList = state.shoppingLists
+      .filter(shoppingList => shoppingList.id === state.selectedResources.shoppingList)[0];
+  const products = state.lineItems
+      .filter(lineItem => selectedShoppingList.lineItems.includes(lineItem.id))
+      .map(lineItem => lineItem.product);
   return {
     visible: state.UIState.isQuantityFormVisible,
     productToLineItem: state.UIState.productToLineItem,
     product: state.products.filter(product => product.id === state.UIState.productToLineItem)[0],
-    selectedShoppingList: state.selectedResources.shoppingList
+    selectedShoppingList: selectedShoppingList,
+    products: products
   }
 };
 
@@ -21,6 +27,9 @@ const mapDispatchToProps = dispatch => {
     saveNewLineItem: function (data) {
       data = Object.assign({}, LineItemModel, data);
       dispatch(addLineItem(data, this.selectedShoppingList))
+    },
+    updateLineItem: function (data) {
+      dispatch(updateLineItem(data))
     }
   }
 };
@@ -30,15 +39,19 @@ const mergeProps =(state, dispatch, own) => {
     ...state,
     ...dispatch,
     ...own,
-    saveNewLineItem(data) {
-      const method = dispatch.saveNewLineItem.bind({selectedShoppingList: state.selectedShoppingList});
-      console.log(method);
-      method(data);
+    addLineItem(data) {
+      let method;
+      if(state.products.includes(data.product)){
+        method = dispatch.updateLineItem
+      }else {
+        method = dispatch.saveNewLineItem.bind({selectedShoppingList: state.selectedShoppingList.id});
+      }
+      method(data)
     }
   }
 };
 
-let QuantityForm = ({visible, productToLineItem, product, toggleVisibility, saveNewLineItem}) => {
+let QuantityForm = ({visible, productToLineItem, product, toggleVisibility, addLineItem}) => {
   if(visible) {
     let quantity;
     return (
@@ -49,7 +62,7 @@ let QuantityForm = ({visible, productToLineItem, product, toggleVisibility, save
             {product.packaging} of {product.name} to the list
             <button type="button" onClick={event => {
               event.preventDefault();
-              saveNewLineItem(
+              addLineItem(
                 {
                   quantity: parseInt(quantity.value),
                   product: productToLineItem

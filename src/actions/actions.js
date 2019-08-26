@@ -14,6 +14,7 @@ export const SAVE_LIST_TO_RENDER = "SAVE_LIST_TO_RENDER";
 export const ADD_SHOPPING_LIST = "ADD_SHOPPING_LIST";
 export const TOGGLE_PRODUCT_POOL_VISIBILITY = "TOGGLE_PRODUCT_POOL_VISIBILITY";
 export const SAVE_SELECTED_SHOPPING_LIST = "SAVE_SELECTED_SHOPPING_LIST";
+export const UPDATE_LINE_ITEM = "UPDATE_LINE_ITEM";
 
 export function clearShoppingList() {
   return {type: CLEAR_SHOPPING_LIST}
@@ -25,6 +26,10 @@ export function deleteShoppingListItem(lineItemId) {
 
 export function addLineItem(lineItem, shoppingListId) {
   return {type: ADD_LINE_ITEM, lineItem: lineItem, shoppingListId: shoppingListId}
+}
+
+export function updateLineItem(lineItem) {
+  return {type: UPDATE_LINE_ITEM, lineItem: lineItem}
 }
 
 export function clearShopList() {
