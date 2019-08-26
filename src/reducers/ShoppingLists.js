@@ -1,4 +1,10 @@
-import {ADD_LINE_ITEM, ADD_SHOPPING_LIST, CLEAR_SHOPPING_LISTS, REMOVE_SHOPPING_LIST} from "../actions/actions";
+import {
+  ADD_LINE_ITEM,
+  ADD_SHOPPING_LIST,
+  CLEAR_SHOPPING_LISTS,
+  DELETE_LINE_ITEM, DELETE_LINE_ITEMS,
+  REMOVE_SHOPPING_LIST
+} from "../actions/actions";
 
 const defaultShoppingLists = [
   {
@@ -20,11 +26,12 @@ const defaultShoppingLists = [
 ];
 
 function shoppingListReducer(state = defaultShoppingLists, action) {
+  const newState = Object.assign([], state);
+  let shoppingListToUpdate;
   switch(action.type) {
     case CLEAR_SHOPPING_LISTS:
       return [];
     case ADD_LINE_ITEM:
-      const newState = Object.assign([], state);
       const selectedShoppingList = newState.filter(shoppingList => shoppingList.id === action.shoppingListId)[0];
       selectedShoppingList.lineItems.push(action.lineItem.id);
       return newState;
@@ -34,7 +41,16 @@ function shoppingListReducer(state = defaultShoppingLists, action) {
       return [
           ...state,
           action.shoppingList
-      ]
+      ];
+    case DELETE_LINE_ITEM:
+      shoppingListToUpdate = newState.filter(shoppingList => shoppingList.id === action.shoppingListId)[0];
+      const idx = shoppingListToUpdate.lineItems.indexOf(action.lineItemId);
+      shoppingListToUpdate.lineItems.splice(idx, 1);
+      return newState;
+    case DELETE_LINE_ITEMS:
+      shoppingListToUpdate = newState.filter(shoppingList => shoppingList.id === action.shoppingListId)[0];
+      shoppingListToUpdate.lineItems = [];
+      return newState;
     default:
       return state;
   }

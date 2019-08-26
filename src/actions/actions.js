@@ -15,6 +15,8 @@ export const ADD_SHOPPING_LIST = "ADD_SHOPPING_LIST";
 export const TOGGLE_PRODUCT_POOL_VISIBILITY = "TOGGLE_PRODUCT_POOL_VISIBILITY";
 export const SAVE_SELECTED_SHOPPING_LIST = "SAVE_SELECTED_SHOPPING_LIST";
 export const UPDATE_LINE_ITEM = "UPDATE_LINE_ITEM";
+export const DELETE_LINE_ITEMS = "DELETE_LINE_ITEMS";
+export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";
 
 export function clearShoppingLists() {
   return {type: CLEAR_SHOPPING_LISTS}
@@ -74,4 +76,12 @@ export function toggleProductPoolVisibility() {
 
 export function saveSelectedShoppingList(id) {
   return {type: SAVE_SELECTED_SHOPPING_LIST, id: id}
+}
+
+export function deleteLineItems(lineItemIds, shoppingListId) {
+  return {type: DELETE_LINE_ITEMS, lineItemIds: lineItemIds, shoppingListId: shoppingListId}
+}
+
+export function deleteLineItem(lineItemId, shoppingListId) {
+  return {type: DELETE_LINE_ITEM, lineItemId: lineItemId, shoppingListId: shoppingListId}
 }
