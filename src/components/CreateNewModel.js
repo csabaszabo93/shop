@@ -1,4 +1,3 @@
-import {addShop} from "../actions/actions";
 import React from "react"
 
 let CreateNewModel = ({createModel}) => {
