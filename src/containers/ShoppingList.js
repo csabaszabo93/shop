@@ -1,7 +1,13 @@
 import {connect} from 'react-redux';
 import ShoppingLists from '../components/shopping-list/ShoppingLists'
 import ShoppingList from "../components/shopping-list/ShoppingList";
-import {renderComponent, saveListToRender, saveSelectedShoppingList} from "../actions/actions";
+import {
+  clearShoppingLists,
+  removeShoppingList,
+  renderComponent,
+  saveListToRender,
+  saveSelectedShoppingList
+} from "../actions/actions";
 import {LINE_ITEMS} from "../components/ComponentRegister";
 
 let mapStateToProps = state => {
@@ -18,9 +24,15 @@ const mapDispatchToProps = dispatch => {
     },
     saveSelected: (id) => {
       dispatch(saveSelectedShoppingList(id));
+    },
+    clear: () => {
+      dispatch(clearShoppingLists())
+    },
+    remove: (id) => {
+      dispatch(removeShoppingList(id))
     }
   }
-}
+};
 
 const ShoppingListsContainer = connect(
   mapStateToProps,

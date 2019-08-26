@@ -1,7 +1,7 @@
 import {getComponent} from "../components/ComponentRegister";
 
-export const CLEAR_SHOPPING_LIST = "CLEAR_SHOPPING_LIST";
-export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";
+export const CLEAR_SHOPPING_LISTS = "CLEAR_SHOPPING_LISTS";
+export const REMOVE_SHOPPING_LIST = "REMOVE_SHOPPING_LIST";
 export const ADD_LINE_ITEM = "ADD_LINE_ITEM";
 export const CLEAR_SHOP_LIST = "CLEAR_SHOP_LIST";
 export const DELETE_SHOP_LIST_ITEM = "DELETE_SHOP_LIST_ITEM";
@@ -16,12 +16,12 @@ export const TOGGLE_PRODUCT_POOL_VISIBILITY = "TOGGLE_PRODUCT_POOL_VISIBILITY";
 export const SAVE_SELECTED_SHOPPING_LIST = "SAVE_SELECTED_SHOPPING_LIST";
 export const UPDATE_LINE_ITEM = "UPDATE_LINE_ITEM";
 
-export function clearShoppingList() {
-  return {type: CLEAR_SHOPPING_LIST}
+export function clearShoppingLists() {
+  return {type: CLEAR_SHOPPING_LISTS}
 }
 
-export function deleteShoppingListItem(lineItemId) {
-  return {type: DELETE_LINE_ITEM, lineItemId: lineItemId}
+export function removeShoppingList(shoppingListId) {
+  return {type: REMOVE_SHOPPING_LIST, shoppingListId: shoppingListId}
 }
 
 export function addLineItem(lineItem, shoppingListId) {
