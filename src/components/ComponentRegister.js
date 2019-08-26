@@ -1,7 +1,7 @@
 import Welcome from "./welcome/Welcome";
 import React from "react";
 import ShopListContainer from "../containers/ShopList";
-import QuantityModal from "./product-list/QuantityModal";
+import QuantityForm from "./product-list/QuantityForm";
 import ProductListContainer from "../containers/ProductList";
 import ShoppingListsContainer, {ShoppingListContainer} from "../containers/ShoppingList";
 import LineItemsContainer from "../containers/LineItemList";
@@ -17,7 +17,7 @@ export const LINE_ITEMS = "LINE_ITEMS";
 const registeredComponents = {
   WELCOME: <Welcome/>,
   SHOPS: <ShopListContainer/>,
-  PRODUCT_LIST: [<QuantityModal/>, <ProductListContainer/>],
+  PRODUCT_LIST: [<QuantityForm/>, <ProductListContainer/>],
   SHOPPING_LISTS: <ShoppingListsContainer/>,
   LATEST_SHOPPING_LIST: <ShoppingListContainer/>,
   LINE_ITEMS: <LineItemsContainer/>

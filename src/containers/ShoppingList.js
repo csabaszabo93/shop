@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import ShoppingLists from '../components/shopping-list/ShoppingLists'
 import ShoppingList from "../components/shopping-list/ShoppingList";
-import {renderComponent, saveListToRender} from "../actions/actions";
+import {renderComponent, saveListToRender, saveSelectedShoppingList} from "../actions/actions";
 import {LINE_ITEMS} from "../components/ComponentRegister";
 
 let mapStateToProps = state => {
@@ -15,6 +15,9 @@ const mapDispatchToProps = dispatch => {
     loadLineItems: (lineItems) => {
       dispatch(saveListToRender(lineItems));
       dispatch(renderComponent(LINE_ITEMS));
+    },
+    saveSelected: (id) => {
+      dispatch(saveSelectedShoppingList(id));
     }
   }
 }

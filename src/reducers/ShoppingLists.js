@@ -25,8 +25,8 @@ function shoppingListReducer(state = defaultShoppingLists, action) {
       return [];
     case ADD_LINE_ITEM:
       const newState = Object.assign([], state);
-      const shoppingListToChange = newState.filter(shoppingList => shoppingList.id === action.shoppingListId);
-      shoppingListToChange.lineItems.push(action.lineItemId);
+      const selectedShoppingList = newState.filter(shoppingList => shoppingList.id === action.shoppingListId)[0];
+      selectedShoppingList.lineItems.push(action.lineItem.id);
       return newState;
     case DELETE_LINE_ITEM:
       return state.filter(lineItem => lineItem.id !== action.lineItemId);

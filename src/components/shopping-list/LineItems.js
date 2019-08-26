@@ -1,9 +1,10 @@
 import LineItem from "./LineItem";
 import React from "react";
 import '../../static/css/App.css';
+import ProductPool from "../../containers/ProductPool";
 
 
-const LineItems = ({lineItems, products, deleteLineItem, clearList}) => {
+const LineItems = ({lineItems, products, deleteLineItem, clearList, showProductPool}) => {
     return (
         <div id="shopping-list">
           <div className="widget-header">
@@ -23,6 +24,10 @@ const LineItems = ({lineItems, products, deleteLineItem, clearList}) => {
                     <LineItem key={index} lineItem={lineItem} deleteLineItem={deleteLineItem} product={products.filter(product => product.id === lineItem.product)[0]}/>
                 ))
             }
+            <button onClick={showProductPool}>
+              Add product to list
+            </button>
+          <ProductPool/>
         </div>
     );
 };

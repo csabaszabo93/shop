@@ -4,7 +4,7 @@ import '../../static/css/App.css';
 import AddShoppingList from "../../containers/AddShoppingList";
 
 
-const ShoppingLists = ({shoppingLists, loadLineItems}) => {
+const ShoppingLists = ({shoppingLists, loadLineItems, saveSelected}) => {
   return (
       <div id="shopping-list">
         <div className="widget-header">
@@ -18,7 +18,7 @@ const ShoppingLists = ({shoppingLists, loadLineItems}) => {
         {shoppingLists.length === 0 && <p className="widget__message">Please add some shoppin' to get started!</p>}
         {
           shoppingLists.map((shoppingList, index) => (
-              <ShoppingList key={index} shoppingList={shoppingList} loadLineItems={loadLineItems}/>
+              <ShoppingList key={index} shoppingList={shoppingList} loadLineItems={loadLineItems} saveSelected={saveSelected}/>
           ))
         }
         <AddShoppingList/>
