@@ -3,6 +3,7 @@ import React from "react";
 import '../../static/css/App.css';
 import QuantityForm from "./QuantityForm";
 import SearchProduct from "../../containers/SearchProduct";
+import AddProduct from "../../containers/AddProduct";
 
 
 const ProductList = ({products, productFilter, isVisible, isQuantityFormVisible, toggleVisibility, toggleQuantityFormVisibility, convertToLineItem}) => {
@@ -19,6 +20,7 @@ const ProductList = ({products, productFilter, isVisible, isQuantityFormVisible,
                 ))
               }
             </product-pool>
+            <AddProduct/>
             <QuantityForm/>
           </div>
         </div>

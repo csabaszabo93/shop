@@ -20,6 +20,7 @@ export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";
 export const TOGGLE_SEARCH_BAR_VISIBILITY = "TOGGLE_SEARCH_BAR_VISIBILITY";
 export const SET_PRODUCT_FILTER = "SET_PRODUCT_FILTER";
 export const REMOVE_PRODUCT_FILTER = "REMOVE_PRODUCT_FILTER";
+export const ADD_PRODUCT = "ADD_PRODUCT";
 
 export function clearShoppingLists() {
   return {type: CLEAR_SHOPPING_LISTS}
@@ -99,4 +100,8 @@ export function setProductFilter(productName) {
 
 export function removeProductFilter() {
   return {type: REMOVE_PRODUCT_FILTER}
+}
+
+export function addProduct(product) {
+  return {type: ADD_PRODUCT, product: product}
 }

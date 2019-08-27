@@ -6,9 +6,11 @@ import {ShoppingListModel} from "../models/models";
 
 const mapStateToProps = state => {
   return {
+    resourceName: "shopping list",
+    isVisible: true,
     attributes: ["name"]
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {

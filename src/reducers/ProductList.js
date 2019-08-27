@@ -1,5 +1,7 @@
 // import {ADD_LINE_ITEM, CLEAR_SHOPPING_LISTS, REMOVE_SHOPPING_LIST} from "../actions/actions";
 
+import {ADD_PRODUCT} from "../actions/actions";
+
 const defaultProductList = [
   {
     id: 11,
@@ -45,6 +47,11 @@ const defaultProductList = [
 
 function productListReducer(state = defaultProductList, action) {
   switch(action.type) {
+    case ADD_PRODUCT:
+      return [
+          ...state,
+          action.product
+      ];
     default:
       return state;
   }

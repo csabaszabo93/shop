@@ -27,13 +27,13 @@ const mapDispatchToProps = dispatch => {
     },
     convertToLineItem: (productId) => {
       dispatch(convertToLineItem(productId))
-    },
+    }
   }
 };
 
 const ProductPool = connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
 )(ProductList);
 
 export default ProductPool;

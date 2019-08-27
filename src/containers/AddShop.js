@@ -6,6 +6,8 @@ import {ShopModel} from "../models/models";
 
 const mapStateToProps = state => {
   return {
+    resourceName: "shop",
+    isVisible: true,
     attributes: ["name"]
   }
 };
