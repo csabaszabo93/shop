@@ -204,6 +204,15 @@ product-pool{
   padding: 1.6rem;
 }
 
+.widget-header .title{
+  display: flex;
+  flex-direction: row;
+}
+
+.widget-header .title svg {
+  margin-left: 0.5rem;
+}
+
 #user-panel:hover{
   cursor: pointer;
 }

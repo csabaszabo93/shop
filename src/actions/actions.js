@@ -17,6 +17,9 @@ export const SAVE_SELECTED_SHOPPING_LIST = "SAVE_SELECTED_SHOPPING_LIST";
 export const UPDATE_LINE_ITEM = "UPDATE_LINE_ITEM";
 export const DELETE_LINE_ITEMS = "DELETE_LINE_ITEMS";
 export const DELETE_LINE_ITEM = "DELETE_LINE_ITEM";
+export const TOGGLE_SEARCH_BAR_VISIBILITY = "TOGGLE_SEARCH_BAR_VISIBILITY";
+export const SET_PRODUCT_FILTER = "SET_PRODUCT_FILTER";
+export const REMOVE_PRODUCT_FILTER = "REMOVE_PRODUCT_FILTER";
 
 export function clearShoppingLists() {
   return {type: CLEAR_SHOPPING_LISTS}
@@ -84,4 +87,16 @@ export function deleteLineItems(lineItemIds, shoppingListId) {
 
 export function deleteLineItem(lineItemId, shoppingListId) {
   return {type: DELETE_LINE_ITEM, lineItemId: lineItemId, shoppingListId: shoppingListId}
+}
+
+export function toggleSearchBarVisibility() {
+  return {type: TOGGLE_SEARCH_BAR_VISIBILITY}
+}
+
+export function setProductFilter(productName) {
+  return {type: SET_PRODUCT_FILTER, productName: productName}
+}
+
+export function removeProductFilter() {
+  return {type: REMOVE_PRODUCT_FILTER}
 }
