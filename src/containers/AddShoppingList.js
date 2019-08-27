@@ -1,9 +1,14 @@
 import '../static/css/App.css';
 import {addShoppingList} from "../actions/actions";
 import {connect} from "react-redux";
-import CreateNewModel from "../components/CreateNewModel";
+import CreateNewResource from "../components/CreateNewResource";
 import {ShoppingListModel} from "../models/models";
 
+const mapStateToProps = state => {
+  return {
+    attributes: ["name"]
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -14,6 +19,6 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-const AddShoppingList = connect(null, mapDispatchToProps)(CreateNewModel);
+const AddShoppingList = connect(mapStateToProps, mapDispatchToProps)(CreateNewResource);
 
 export default AddShoppingList;
