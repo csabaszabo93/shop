@@ -23,13 +23,20 @@ const registeredComponents = {
   LINE_ITEMS: <LineItemsContainer/>
 };
 
+const componentsInMenu = [
+  WELCOME,
+  SHOPS,
+  SHOPPING_LISTS,
+  LATEST_SHOPPING_LIST
+]
+
 export function getComponent(key) {
   return registeredComponents[key];
 }
 
 export function getComponentKeys() {
   const returnList = [];
-  for(const key of Object.keys(registeredComponents)) {
+  for(const key of componentsInMenu) {
     returnList.push(
       {
         key: key,
