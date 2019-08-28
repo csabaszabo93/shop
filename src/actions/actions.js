@@ -122,11 +122,11 @@ export function authenticateUser(credentials) {
     dispatch(requestUserAuth());
     return axios({
       method: "post",
-      url: "http://localhost:8080/users/auth",
+      url: process.env.REACT_APP_API_URL + "users/auth",
       data: credentials,
       config: {
         headers: {
-          "Access-Control-Allow-Origin": "http://localhost:8080"
+          "Access-Control-Allow-Origin": process.env.REACT_APP_API_URL
         }
       }
     })
