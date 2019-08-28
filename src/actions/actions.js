@@ -1,4 +1,5 @@
 import {getComponent} from "../components/ComponentRegister";
+import axios from "axios";
 
 export const CLEAR_SHOPPING_LISTS = "CLEAR_SHOPPING_LISTS";
 export const REMOVE_SHOPPING_LIST = "REMOVE_SHOPPING_LIST";
@@ -21,6 +22,8 @@ export const TOGGLE_SEARCH_BAR_VISIBILITY = "TOGGLE_SEARCH_BAR_VISIBILITY";
 export const SET_PRODUCT_FILTER = "SET_PRODUCT_FILTER";
 export const REMOVE_PRODUCT_FILTER = "REMOVE_PRODUCT_FILTER";
 export const ADD_PRODUCT = "ADD_PRODUCT";
+export const REQUEST_USER_AUTH = "REQUEST_USER_AUTH";
+export const TOGGLE_LOGIN_VISIBILITY = "TOGGLE_LOGIN_VISIBILITY";
 
 export function clearShoppingLists() {
   return {type: CLEAR_SHOPPING_LISTS}
@@ -104,4 +107,33 @@ export function removeProductFilter() {
 
 export function addProduct(product) {
   return {type: ADD_PRODUCT, product: product}
+}
+
+function requestUserAuth() {
+  return {type: REQUEST_USER_AUTH}
+}
+
+export function toggleLoginVisibility() {
+  return {type: TOGGLE_LOGIN_VISIBILITY}
+}
+
+export function authenticateUser(credentials) {
+  return function(dispatch) {
+    dispatch(requestUserAuth());
+    return axios({
+      method: "post",
+      url: "http://localhost:8080/users/auth",
+      data: credentials,
+      config: {
+        headers: {
+          "Access-Control-Allow-Origin": "http://localhost:8080"
+        }
+      }
+    })
+        .then((response) => {
+          console.log(response)
+        },(error) => {
+          console.log(error)
+        })
+  }
 }

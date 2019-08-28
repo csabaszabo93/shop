@@ -5,6 +5,7 @@ import UIReducer from "./UI";
 import lineItemsReducer from "./LineItems";
 import {combineReducers} from "redux";
 import selectedResourcesReducer from "./SelectedResources";
+import UserReducer from "./User";
 
 const rootReducer = combineReducers({
   shoppingLists: shoppingListReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   lineItems: lineItemsReducer,
   UIState: UIReducer,
   selectedResources: selectedResourcesReducer,
+  user: UserReducer,
 });
 
 export default rootReducer

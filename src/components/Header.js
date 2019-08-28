@@ -2,8 +2,9 @@ import React from "react";
 import '../static/css/App.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faUser} from "@fortawesome/free-solid-svg-icons";
-import {toggleMenuVisibility} from "../actions/actions";
+import {toggleLoginVisibility, toggleMenuVisibility} from "../actions/actions";
 import {connect} from "react-redux";
+import Login from "./user/Login";
 
 const mapStateToProps = state => {
   return {
@@ -17,11 +18,13 @@ const mapDispatchToProps = dispatch => {
     openMenu: () => {
       dispatch(toggleMenuVisibility())
     },
-    loadUser: null
+    toggleLoginVisibility: () => {
+      dispatch(toggleLoginVisibility())
+    }
   }
 };
 
-let Header = ({title, username, openMenu, loadUser}) => {
+let Header = ({title, username, openMenu, toggleLoginVisibility}) => {
     return (
         <div className="header" >
           <div onClick={(e) => {openMenu()}}>
@@ -30,10 +33,11 @@ let Header = ({title, username, openMenu, loadUser}) => {
           <div>
             {title}
           </div>
-          <div id="user-panel">
+          <div id="user-panel" onClick={toggleLoginVisibility}>
             <FontAwesomeIcon icon={faUser}/>
             {username}
           </div>
+          <Login/>
         </div>
     );
 };

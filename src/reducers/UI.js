@@ -6,7 +6,7 @@ import {
   SAVE_LIST_TO_RENDER,
   TOGGLE_PRODUCT_POOL_VISIBILITY,
   TOGGLE_SEARCH_BAR_VISIBILITY,
-  SET_PRODUCT_FILTER, REMOVE_PRODUCT_FILTER
+  SET_PRODUCT_FILTER, REMOVE_PRODUCT_FILTER, TOGGLE_LOGIN_VISIBILITY
 } from "../actions/actions";
 import {getComponent, WELCOME} from "../components/ComponentRegister";
 
@@ -19,6 +19,7 @@ const defaultUIState = {
   isProductPoolVisible: false,
   isSearchBarVisible: false,
   productFilter: null,
+  isLoginVisible: false,
 };
 
 function UIReducer(state = defaultUIState, action){
@@ -41,6 +42,8 @@ function UIReducer(state = defaultUIState, action){
       return Object.assign({}, state, {productFilter: action.productName});
     case REMOVE_PRODUCT_FILTER:
       return Object.assign({}, state, {productFilter: null});
+    case TOGGLE_LOGIN_VISIBILITY:
+      return Object.assign({}, state, {isLoginVisible: !state.isLoginVisible});
     default:
       return state
   }
