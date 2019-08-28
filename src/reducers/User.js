@@ -1,11 +1,13 @@
-import {REQUEST_USER_AUTH} from "../actions/actions";
+import {STORE_USER} from "../actions/actions";
 
 const defaultState = null;
 
 function UserReducer(state = defaultState, action) {
   switch(action.type) {
-    case REQUEST_USER_AUTH:
-      return state;
+    case STORE_USER:
+      return {
+        ...action.user
+      };
     default:
       return state;
   }
