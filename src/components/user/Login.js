@@ -1,6 +1,9 @@
 import React from "react";
 import {authenticateUser, toggleLoginVisibility} from "../../actions/actions";
 import {connect} from "react-redux";
+import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faKey} from "@fortawesome/free-solid-svg-icons/faKey";
 
 const mapStateToProps = state => {
   return {
@@ -28,7 +31,7 @@ let Login = ({isVisible, login, toggleVisibility}) => {
     return(
         <div id="modal" onClick={toggleVisibility}>
           <div id="login" onClick={e => e.stopPropagation()}>
-            <form className="add-option" onSubmit={(e) => {
+            <form onSubmit={(e) => {
               e.preventDefault();
               /*if(!input.value.trim()){
                 return true;
@@ -36,20 +39,24 @@ let Login = ({isVisible, login, toggleVisibility}) => {
               const values = Object.assign({}, input);
               values.username = input.username.value;
               values.password = input.password.value;
-              login(values);/*
+              login(values);
               input.username.value = "";
-              input.password.value = "";*/
+              input.password.value = "";
             }}>
-              <input
-                  ref={node => input.username = node}
-                  className="add-option__input"
-                  type="text"
-                  placeholder="username" />
-              <input
-                  ref={node => input.password = node}
-                  className="add-option__input"
-                  type="text"
-                  placeholder="password" />
+              <div>
+                <FontAwesomeIcon icon={faUser}/>
+                <input
+                    ref={node => input.username = node}
+                    type="text"
+                    placeholder="username" />
+              </div>
+              <div>
+                <FontAwesomeIcon icon={faKey}/>
+                <input
+                    ref={node => input.password = node}
+                    type="password"
+                    placeholder="password" />
+              </div>
               <button type="submit" className="button">Login</button>
             </form>
           </div>

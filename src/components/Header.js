@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => {
 
 let Header = ({title, username, openMenu, toggleLoginVisibility}) => {
     return (
-        <div className="header" >
+        <div id="header" >
           <div onClick={(e) => {openMenu()}}>
             <FontAwesomeIcon icon={faBars}/>
           </div>

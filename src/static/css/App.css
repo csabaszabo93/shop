@@ -119,10 +119,6 @@ product-pool{
   padding: 1.6rem;
 }
 
-::placeholder{
-  color: #E0E1E1;
-}
-
 .big-button{
   background: #D75265;
   border: none;
@@ -145,6 +141,7 @@ product-pool{
   color: #F2F0CC;
   font-weight: 500;
   padding: 1.2rem;
+  transition: all ease 300ms;
 }
 
 .button--link{
@@ -152,10 +149,6 @@ product-pool{
   border: none;
   color: #6C2933;
   padding: 0;
-}
-
-.button{
-  transition: all ease 300ms;
 }
 
 .button:hover{
@@ -171,7 +164,7 @@ product-pool{
   margin: 0;
 }
 
-.header{
+#header{
   position: sticky;
   top: 0;
   background: #683D43;
@@ -239,4 +232,56 @@ product-pool{
 
 .menu-tile:nth-of-type(1){
   border-top: 0.1rem #eceff1 solid;
+}
+
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+}
+
+#login form{
+  display: flex;
+  flex-direction: column;
+  max-width: inherit;
+}
+
+#login input {
+  display: flex;
+  border: none;
+  text-align: center;
+  background-color: rgba(100,100,100,0.9);
+  color: #eceff1;
+  height: 3rem;
+  font-size: inherit;
+  max-width: 85%;
+}
+
+#login input::placeholder{
+  color: #eceff1;
+}
+
+input:focus {
+  outline: none;
+}
+
+#login button {
+  margin-top: 0.8rem;
+  font-size: inherit;
+}
+
+#login form div {
+  margin-top: 0.5rem;
+  background-color: #a13e4c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+#login form div svg {
+  margin-left: 0.7rem;
+  cursor: default;
 }
